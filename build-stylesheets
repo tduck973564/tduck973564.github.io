@@ -1,2 +1,2 @@
 #!/bin/sh
-sass ./build:./
+sass ./build:./target

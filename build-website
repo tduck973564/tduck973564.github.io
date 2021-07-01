@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+
+import os
+from bs4 import BeautifulSoup
+
+os.chdir("./target")
+
+with open("_navbar.html") as file:
+    navbar = file.read()
+navbarSoup = BeautifulSoup(navbar, 'html.parser')
+
+for file in os.listdir("./"):
+    if file.endswith(".html") and not file.startswith("_"):
+        with open(file) as file:
+            currentFile = file.read()
+        currentFileSoup = BeautifulSoup(currentFile, 'html.parser')
+        name = currentFileSoup.find(id='name')
+        cont = True
+        for navbarLiEntry in navbarSoup.find_all(name="li"):
+            for navbarEntry in navbarSoup.find_all(name="a"):
+                if navbarEntry.get('href') == file.name:
+                    cont = False
+                if navbarEntry.get('href') not in os.listdir("./"):
+                    _ = navbarLiEntry.extract()
+        if cont:
+            newTag = BeautifulSoup(f'<li><a href="{file.name}">{name.text}</a></li>', 'html.parser')
+            navbarSoup.nav.ul.append(newTag)
+
+
+with open("_navbar.html", "w") as out:
+    out.write(str(navbarSoup))
+
+for file in os.listdir("./"):
+    if file.endswith(".html") and not file.startswith("_"):
+        with open(file) as file:
+            currentFile = file.read()
+        currentFileSoup = BeautifulSoup(currentFile, 'html.parser')
+        for i in currentFileSoup.find_all("nav"):
+            _ = i.extract()
+        currentFileSoup.html.append(navbarSoup)
+        with open(file.name, "w") as out:
+            out.write(str(currentFileSoup))
+
+
+os.chdir("..")
+
+os.system("./build-stylesheets")

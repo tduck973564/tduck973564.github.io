@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+$default-font: 'Open Sans', 'Roboto', 'Noto Sans', sans-serif;
+$default-code-font: 'Source Code Pro', monospace;
+$default-font-size: 1.7rem;
+$default-code-font-size: 1.7rem;
+$foreground-color: rgb(0, 0, 0);
+$background-color: rgb(255, 250, 250);
+$lighter-foreground-color: rgb(190, 190, 190);
+$border-color: rgb(180, 180, 180);
+$nav-colour: rgb(245, 245, 245);
+$hover-color: rgb(70, 70, 70);
+
+
+html {
+    margin: 0;
+    padding: 0;
+    /* When copy code from The Rust Programming Language, but instead of the book it's from inspect element*/
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $default-font;
+    font-size: $default-font-size;
+    background-color: $background-color;
+}
+
+code {
+    font-family: $default-code-font;
+    font-size: $default-font-size;
+    background-color: $lighter-foreground-color;
+}
+
+nav {
+    height: 100%;
+    width: 23%;
+    position: fixed;
+    overflow: auto;
+    background-color: $nav-colour;
+    ul {
+        margin-left: 0;
+        margin-top: 0;
+        padding-left: 0;
+        padding-top: 0;
+        border-left: $border-color;
+    }
+    img {
+        margin-right: 5%;
+        width: 35px;
+        border-radius: 50%;
+    }
+    li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        .active {
+            background-color: $lighter-foreground-color;
+            font-weight: bold;
+        }
+        a {
+            display: block;
+            padding: 8px 16px;
+            text-decoration: none;
+            .active {
+                background-color: $lighter-foreground-color;
+            }
+            color: $foreground-color;
+        }
+        :hover {
+            background-color: $hover-color;
+            color: $background-color;
+        }
+    }
+}
