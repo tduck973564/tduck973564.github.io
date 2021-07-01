@@ -3,7 +3,7 @@
 import os
 from bs4 import BeautifulSoup
 
-os.chdir("./target")
+os.chdir("./")
 
 with open("_navbar.html") as file:
     navbar = file.read()
@@ -40,8 +40,5 @@ for file in os.listdir("./"):
         currentFileSoup.html.append(navbarSoup)
         with open(file.name, "w") as out:
             out.write(str(currentFileSoup))
-
-
-os.chdir("..")
 
 os.system("./build-stylesheets")
