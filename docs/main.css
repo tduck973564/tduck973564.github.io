@@ -55,6 +55,7 @@ body #text-area .text-block {
 }
 body #text-area .text-block img {
   border-radius: 2px;
+  margin: 10px;
   box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
 }
 
@@ -94,10 +95,24 @@ nav li a {
   color: black;
   background-color: white;
 }
+@keyframes hover-animation {
+  from {
+    background-color: white;
+    color: black;
+    box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+  }
+  to {
+    background-color: #51a6e5;
+    color: #faf9f8;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+  }
+}
 nav li :hover {
   background-color: #51a6e5;
   color: #faf9f8;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+  animation-name: hover-animation;
+  animation-duration: 0.2s;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -133,10 +148,13 @@ nav li :hover {
 
   nav {
     display: none;
-    width: 97.07%;
+    width: 100%;
     background-color: #faf9f8;
-    padding: 15px;
     padding-top: 45px;
+  }
+  nav ul, nav h2 {
+    padding-right: 15px;
+    padding-left: 15px;
   }
 }
 
