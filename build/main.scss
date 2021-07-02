@@ -1,30 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
-$default-font: 'Open Sans', 'Roboto', 'Noto Sans', sans-serif;
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Light"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Semilight"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Bold"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: SegoeUI;
+    src:
+        local("Segoe UI Semibold"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"),
+        url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+    font-weight: 700;
+}
+
+$default-font: 'SegoeUI', 'Roboto', 'Noto Sans', sans-serif;
 $default-code-font: 'Source Code Pro', monospace;
-$default-font-size: 1.7rem;
-$default-code-font-size: 1.7rem;
+$default-font-size: 1.9rem;
+$default-code-font-size: 1.9rem;
 $foreground-color: rgb(0, 0, 0);
-$background-color: rgb(255, 250, 250);
-$lighter-foreground-color: rgb(190, 190, 190);
-$border-color: rgb(180, 180, 180);
+$background-color: #faf9f8;
+$text-block-color: white;
+$lighter-foreground-color: rgb(240, 240, 240);
+$border-color: rgb(170, 170, 170);
 $nav-colour: rgb(245, 245, 245);
-$hover-color: rgb(70, 70, 70);
+$link-color: #51a6e5;
 
 
 html {
     margin: 0;
     padding: 0;
+    background-color: $background-color;
     /* When copy code from The Rust Programming Language, but instead of the book it's from inspect element*/
     font-size: 62.5%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
     font-family: $default-font;
     font-size: $default-font-size;
-    background-color: $background-color;
+    margin-left: 20px;
+    margin-right: 20px;
+    #text-area {
+        h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        }
+        .text-block {
+            img {
+                border-radius: 2px;
+                box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
+            }
+            background-color: $text-block-color;
+            border-radius: 2px;
+            padding: 20px;
+            margin-bottom: 25px;
+            margin-top: 25px;
+            box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
+        }
+        margin-left: 13%;
+        padding: 40px;
+    }
 }
 
 code {
@@ -34,11 +105,14 @@ code {
 }
 
 nav {
-    height: 100%;
-    width: 23%;
+    height: 99%;
+    width: 13%;
     position: fixed;
     overflow: auto;
-    background-color: $nav-colour;
+    background-color: transparent;
+    h2 {
+        padding: 5px;
+    }
     ul {
         margin-left: 0;
         margin-top: 0;
@@ -46,31 +120,22 @@ nav {
         padding-top: 0;
         border-left: $border-color;
     }
-    img {
-        margin-right: 5%;
-        width: 35px;
-        border-radius: 50%;
-    }
     li {
         list-style-type: none;
-        margin: 0;
-        padding: 0;
-        .active {
-            background-color: $lighter-foreground-color;
-            font-weight: bold;
-        }
+        padding: 5px;
         a {
             display: block;
             padding: 8px 16px;
             text-decoration: none;
-            .active {
-                background-color: $lighter-foreground-color;
-            }
+            border-radius: 3px;
+            box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
             color: $foreground-color;
+            background-color: $text-block-color;
         }
         :hover {
-            background-color: $hover-color;
+            background-color: $link-color;
             color: $background-color;
+            box-shadow: 0 10px 10px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
         }
     }
 }

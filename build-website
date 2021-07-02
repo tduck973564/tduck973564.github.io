@@ -37,7 +37,7 @@ for file in os.listdir("./"):
         currentFileSoup = BeautifulSoup(currentFile, 'html.parser')
         for i in currentFileSoup.find_all("nav"):
             _ = i.extract()
-        currentFileSoup.html.append(navbarSoup)
+        currentFileSoup.html.insert(0, navbarSoup)
         with open(file.name, "w") as out:
             out.write(str(currentFileSoup))
 

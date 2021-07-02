@@ -1,65 +1,103 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@font-face {
+  font-family: SegoeUI;
+  src: local("Segoe UI Light"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: SegoeUI;
+  src: local("Segoe UI Semilight"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semilight/latest.ttf) format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: SegoeUI;
+  src: local("Segoe UI"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: SegoeUI;
+  src: local("Segoe UI Bold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/bold/latest.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: SegoeUI;
+  src: local("Segoe UI Semibold"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff2) format("woff2"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.woff) format("woff"), url(//c.s-microsoft.com/static/fonts/segoe-ui/west-european/semibold/latest.ttf) format("truetype");
+  font-weight: 700;
+}
 html {
   margin: 0;
   padding: 0;
+  background-color: #faf9f8;
   /* When copy code from The Rust Programming Language, but instead of the book it's from inspect element*/
   font-size: 62.5%;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans", "Roboto", "Noto Sans", sans-serif;
-  font-size: 1.7rem;
-  background-color: snow;
+  font-family: "SegoeUI", "Roboto", "Noto Sans", sans-serif;
+  font-size: 1.9rem;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+body #text-area {
+  margin-left: 13%;
+  padding: 40px;
+}
+body #text-area h1, body #text-area h2, body #text-area h3, body #text-area h4, body #text-area h5, body #text-area h6 {
+  text-align: center;
+}
+body #text-area .text-block {
+  background-color: white;
+  border-radius: 2px;
+  padding: 20px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
+}
+body #text-area .text-block img {
+  border-radius: 2px;
+  box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
 }
 
 code {
   font-family: "Source Code Pro", monospace;
-  font-size: 1.7rem;
-  background-color: #bebebe;
+  font-size: 1.9rem;
+  background-color: #f0f0f0;
 }
 
 nav {
-  height: 100%;
-  width: 23%;
+  height: 99%;
+  width: 13%;
   position: fixed;
   overflow: auto;
-  background-color: whitesmoke;
+  background-color: transparent;
+}
+nav h2 {
+  padding: 5px;
 }
 nav ul {
   margin-left: 0;
   margin-top: 0;
   padding-left: 0;
   padding-top: 0;
-  border-left: #b4b4b4;
-}
-nav img {
-  margin-right: 5%;
-  width: 35px;
-  border-radius: 50%;
+  border-left: #aaaaaa;
 }
 nav li {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-nav li .active {
-  background-color: #bebebe;
-  font-weight: bold;
+  padding: 5px;
 }
 nav li a {
   display: block;
   padding: 8px 16px;
   text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
   color: black;
-}
-nav li a .active {
-  background-color: #bebebe;
+  background-color: white;
 }
 nav li :hover {
-  background-color: #464646;
-  color: snow;
+  background-color: #51a6e5;
+  color: #faf9f8;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
 }
 
 /*# sourceMappingURL=main.css.map */
