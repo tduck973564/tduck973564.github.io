@@ -3,7 +3,7 @@
 import os
 from bs4 import BeautifulSoup
 
-os.chdir("./target")
+os.chdir("./docs")
 
 with open("_navbar.html") as file:
     navbar = file.read()

@@ -1,2 +1,2 @@
 #!/bin/sh
-sass --watch ./build:./target
+sass --watch ./build:./docs
