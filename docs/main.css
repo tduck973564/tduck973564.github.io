@@ -35,6 +35,7 @@ html {
 body {
   font-family: "SegoeUI", "Roboto", "Noto Sans", sans-serif;
   font-size: 1.9rem;
+  margin-top: 0;
   margin-left: 20px;
   margin-right: 20px;
 }
