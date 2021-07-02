@@ -139,3 +139,45 @@ nav {
         }
     }
 }
+
+@media only screen and (min-width: 1200px) {
+    #mobile-nav-button {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #mobile-nav-button {
+        position: fixed;
+        width: 100%;
+        padding: 15px;
+        font-family: $default-font;
+        font-size: $default-font-size;
+        background-color: $text-block-color;
+        border: none;
+        padding: 15px;
+        box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        #text-area {
+            margin: 0;
+            padding: 15px;
+            padding-top: 45px;
+            .text-block {
+                padding: 20px;
+            }
+        }
+    }
+    nav {
+        display: none;
+        width: 100%;
+        background-color: $background-color;
+        padding: 15px;
+        padding-top: 45px;
+        li {
+            width: 99%
+        }
+    }
+}

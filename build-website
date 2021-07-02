@@ -3,7 +3,7 @@
 import os
 from bs4 import BeautifulSoup
 
-os.chdir("./")
+os.chdir("./target")
 
 with open("_navbar.html") as file:
     navbar = file.read()
@@ -23,9 +23,10 @@ for file in os.listdir("./"):
                 if navbarEntry.get('href') not in os.listdir("./"):
                     _ = navbarLiEntry.extract()
         if cont:
-            newTag = BeautifulSoup(f'<li><a href="{file.name}">{name.text}</a></li>', 'html.parser')
-            navbarSoup.nav.ul.append(newTag)
-
+            try:
+                newTag = BeautifulSoup(f'<li><a href="{file.name}">{name.text}</a></li>', 'html.parser')
+                navbarSoup.nav.ul.append(newTag)
+            except: continue
 
 with open("_navbar.html", "w") as out:
     out.write(str(navbarSoup))
@@ -37,8 +38,10 @@ for file in os.listdir("./"):
         currentFileSoup = BeautifulSoup(currentFile, 'html.parser')
         for i in currentFileSoup.find_all("nav"):
             _ = i.extract()
-        currentFileSoup.html.insert(1, navbarSoup)
+        try: currentFileSoup.html.insert(1, navbarSoup)
+        except: continue
         with open(file.name, "w") as out:
             out.write(str(currentFileSoup))
 
+os.chdir("../")
 os.system("./build-stylesheets")

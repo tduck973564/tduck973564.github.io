@@ -1,12 +1,45 @@
-<!-- This is a template, CSS won't load because this needs to be modified and put in ../target -->
-
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <link href="main.css" rel="stylesheet"/>
-        <div id="name" style="display: none;">Name on navbar here</div>
-        <title>Title here</title>
-    </head>
+<button id="mobile-nav-button" onclick="toggleNavVisibility()">Menu</button>
+<nav id="nav">
+<h2>Navigation</h2>
+<ul>
+<li><a href="index.html">Home</a></li></ul>
+</nav>
+<head>
+<meta charset="utf-8"/>
+<link href="main.css" rel="stylesheet"/>
+<meta name="viewport" content="width=device-width", initial-scale=1.0>
+<div id="name" style="display: none;">Home</div>
+<title>tduck973564 - Home</title>
+<script>
+    function toggleNavVisibility() {
+        let nav = document.getElementById("nav");
+        console.log(nav);
+        if (nav.style.display === "none") {
+            nav.style.display = "block"
+        }
+        else {
+            nav.style.display = "none";
+        }
+    }
+</script>
+</head>
+<body>
+<div id="text-area">
+<h1>Home</h1>
+<div class="text-block">
+<img align="right" src="https://avatars.githubusercontent.com/u/71878148?v=4" style="width: 245px"/>
+<p>Hi! I'm Thomas, known as tduck973564 on <a href="https://github.com/tduck973564">GitHub</a> and <a href="https://discordapp.com/users/427702345879781377">Discord.</a></p>
+<p>I'm a noob programmer who mainly programs in Python and Rust, but in the future I would like to learn C and Bash. I love tweaking around with computers and Linux especially. I use Fedora Linux 34, with the KDE Plasma desktop.</p>
+<p>My preferred code editor is Visual Studio Code, with the default theme. I have tried to use emacs and vim before, but nothing beats the ease of use of a graphical code editor. Ironically, I really don't like coding graphical user interfaces in anything other than HTML and CSS. I prefer to develop in the backend, although I will have to write some frontend programs in the future. </p>
+<p>My favourite programming language has to be Rust, as it teaches me good programming practices while also being fun to use.</p>
+</div>
+<div class="text-block">
+<h2>GitHub</h2>
+<p>I regularly post my projects on GitHub, which is <a href="https://github.com/tduck973564">here</a>.</p>
+</div>
+</div>
+</body>
 </html>
