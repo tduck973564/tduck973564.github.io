@@ -133,13 +133,10 @@ nav li :hover {
 
   nav {
     display: none;
-    width: 100%;
+    width: 97.07%;
     background-color: #faf9f8;
     padding: 15px;
     padding-top: 45px;
-  }
-  nav li {
-    width: 99%;
   }
 }
 
