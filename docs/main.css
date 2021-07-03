@@ -67,6 +67,7 @@ code {
 }
 
 nav {
+  margin-top: 0;
   height: 99%;
   width: 15%;
   position: fixed;
