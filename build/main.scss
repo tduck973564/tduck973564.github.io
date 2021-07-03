@@ -133,39 +133,12 @@ nav {
             box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
             color: $foreground-color;
             background-color: $text-block-color;
-            animation-name: reverse-hover-animation;
-            animation-duration: 0.2s;
-        }
-        @keyframes hover-animation {
-            from {
-                background-color: $text-block-color;
-                color: $foreground-color;
-                box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
-            }
-            to {
-                background-color: $link-color;
-            color: $background-color;
-            box-shadow: 0 10px 10px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
-            }
-        }
-        @keyframes reverse-hover-animation {
-            to {
-                background-color: $text-block-color;
-                color: $foreground-color;
-                box-shadow: 0 3.2px 7.2px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
-            }
-            from {
-                background-color: $link-color;
-            color: $background-color;
-            box-shadow: 0 10px 10px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
-            }
+            transition: 0.2s;
         }
         :hover {
             background-color: $link-color;
             color: $background-color;
             box-shadow: 0 10px 10px 0 rgba(0,0,0,.132),0 .6px 1.8px 0 rgba(0,0,0,.108);
-            animation-name: hover-animation;
-            animation-duration: 0.2s;
         }
     }
 }
@@ -177,6 +150,9 @@ nav {
 }
 
 @media only screen and (max-width: 1200px) {
+    img {
+        width: 100%;
+    }
     #mobile-nav-button {
         position: fixed;
         width: 100%;

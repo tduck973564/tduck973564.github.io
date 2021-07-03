@@ -95,39 +95,12 @@ nav li a {
   box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
   color: black;
   background-color: white;
-  animation-name: reverse-hover-animation;
-  animation-duration: 0.2s;
-}
-@keyframes hover-animation {
-  from {
-    background-color: white;
-    color: black;
-    box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
-  }
-  to {
-    background-color: #51a6e5;
-    color: #faf9f8;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
-  }
-}
-@keyframes reverse-hover-animation {
-  to {
-    background-color: white;
-    color: black;
-    box-shadow: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
-  }
-  from {
-    background-color: #51a6e5;
-    color: #faf9f8;
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
-  }
+  transition: 0.2s;
 }
 nav li :hover {
   background-color: #51a6e5;
   color: #faf9f8;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.132), 0 0.6px 1.8px 0 rgba(0, 0, 0, 0.108);
-  animation-name: hover-animation;
-  animation-duration: 0.2s;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -136,6 +109,10 @@ nav li :hover {
   }
 }
 @media only screen and (max-width: 1200px) {
+  img {
+    width: 100%;
+  }
+
   #mobile-nav-button {
     position: fixed;
     width: 100%;
