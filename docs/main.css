@@ -109,10 +109,6 @@ nav li :hover {
   }
 }
 @media only screen and (max-width: 1200px) {
-  img {
-    width: 100%;
-  }
-
   #mobile-nav-button {
     position: fixed;
     width: 100%;
@@ -147,6 +143,11 @@ nav li :hover {
   nav ul, nav h2 {
     padding-right: 15px;
     padding-left: 15px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  img {
+    width: 100%;
   }
 }
 
