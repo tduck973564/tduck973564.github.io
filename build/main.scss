@@ -63,10 +63,6 @@ $border-color: rgb(170, 170, 170);
 $nav-colour: rgb(245, 245, 245);
 $link-color: #51a6e5;
 
-* {
-    overflow: hidden;
-}
-
 html {
     margin: 0;
     padding: 0;
@@ -116,7 +112,7 @@ nav {
     overflow: auto;
     background-color: transparent;
     h2 {
-        padding: 5px;
+        padding: 10px;
     }
     ul {
         margin-left: 0;
@@ -192,4 +188,8 @@ nav {
     img {
         width: 100%;
     }
+}
+
+a {
+    color: $link-color;
 }
