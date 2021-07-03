@@ -40,7 +40,7 @@ body {
   margin-right: 20px;
 }
 body #text-area {
-  margin-left: 13%;
+  margin-left: 15%;
   padding: 40px;
 }
 body #text-area h1, body #text-area h2, body #text-area h3, body #text-area h4, body #text-area h5, body #text-area h6 {
@@ -68,7 +68,7 @@ code {
 
 nav {
   height: 99%;
-  width: 13%;
+  width: 15%;
   position: fixed;
   overflow: auto;
   background-color: transparent;

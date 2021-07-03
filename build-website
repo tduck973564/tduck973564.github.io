@@ -32,16 +32,25 @@ with open("_navbar.html", "w") as out:
     out.write(str(navbarSoup))
 
 for file in os.listdir("./"):
+    with open("_navbar.html") as openedNavbarFile:
+        navbar = openedNavbarFile.read()
+    navbarSoup = BeautifulSoup(navbar, 'html.parser')
     if file.endswith(".html") and not file.startswith("_"):
-        with open(file) as file:
-            currentFile = file.read()
+        print("Adding navbar to " + file + "...")
+        with open(file) as openedFile:
+            currentFile = openedFile.read()
         currentFileSoup = BeautifulSoup(currentFile, 'html.parser')
         for i in currentFileSoup.find_all("nav"):
             _ = i.extract()
-        try: currentFileSoup.html.insert(1, navbarSoup)
-        except: continue
-        with open(file.name, "w") as out:
+        try:
+            currentFileSoup.html.insert(0, navbarSoup)
+        except:
+            print("Could not add navbar to " + file + "...")
+            continue
+        with open(file, "w") as out:
             out.write(str(currentFileSoup))
 
 os.chdir("../")
+print("Compiling stylesheets...")
 os.system("./build-stylesheets")
+print("Done")
