@@ -63,6 +63,9 @@ $border-color: rgb(170, 170, 170);
 $nav-colour: rgb(245, 245, 245);
 $link-color: #51a6e5;
 
+* {
+    overflow: hidden;
+}
 
 html {
     margin: 0;
@@ -152,7 +155,6 @@ nav {
 @media only screen and (max-width: 1200px) {
     #mobile-nav-button {
         position: fixed;
-        margin-top: 0;
         width: 100%;
         padding: 15px;
         font-family: $default-font;
