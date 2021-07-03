@@ -111,6 +111,7 @@ nav li :hover {
 @media only screen and (max-width: 1200px) {
   #mobile-nav-button {
     position: fixed;
+    margin-top: 0;
     width: 100%;
     padding: 15px;
     font-family: "SegoeUI", "Roboto", "Noto Sans", sans-serif;
