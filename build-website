@@ -2,6 +2,8 @@
 
 import os
 from bs4 import BeautifulSoup
+from pathlib import Path
+from datetime import datetime
 
 os.chdir("./docs")
 
@@ -49,6 +51,48 @@ for file in os.listdir("./"):
             continue
         with open(file, "w") as out:
             out.write(str(currentFileSoup))
+
+with open("_blogposts.html") as file:
+    blogPosts = file.read()
+blogPostsSoup = BeautifulSoup(blogPosts, 'html.parser')
+
+os.chdir("./blog")
+
+print("Generating blog...")
+for file in sorted(os.listdir("./"), key = os.path.getctime):
+    if file.endswith(".html") and not file.startswith("_"):
+        with open(file) as file:
+            currentFile = file.read()
+        currentFileSoup = BeautifulSoup(currentFile, 'html.parser')
+        name = currentFileSoup.find(id='name')
+        cont = True
+        for blogBlock in blogPostsSoup.find_all(class_="text-block"):
+            for blogEntry in blogBlock.find_all(name="a"):
+                if blogEntry.get('href') == file.name:
+                    cont = False
+                if blogEntry.get('href') not in os.listdir("./"):
+                    _ = blogBlock.extract()
+        if cont:
+            try:
+                newTag = BeautifulSoup(f'<div class="text-block"><h2><a href="{"/blog/"+file.name}">{name.text}</a></h2><p>Created: {datetime.fromtimestamp(os.path.getctime(file.name)).replace(microsecond=0, second=0, hour=0, minute=0).isoformat()}</p><p>Last modified: {datetime.fromtimestamp(os.path.getmtime(file.name)).replace(microsecond=0, second=0, hour=0, minute=0).isoformat()}</p></div>', 'html.parser')
+                blogPostsSoup.append(newTag)
+            except: continue
+
+os.chdir("../")
+
+with open("_blogposts.html", "w") as out:
+    out.write(str(blogPostsSoup))
+
+with open("blog.html") as file:
+    blog = file.read()
+blogSoup = BeautifulSoup(blog, 'html.parser')
+
+_ = blogSoup.extract(blogSoup.find(id="blog"))
+blogDivSoup = BeautifulSoup(f'<div id="blog">{str(blogPostsSoup)}</div>', 'html.parser')
+blogSoup.html.body.div.append(blogDivSoup)
+
+with open("blog.html", "w") as out:
+    out.write(str(blogSoup))
 
 os.chdir("../")
 print("Compiling stylesheets...")
