@@ -68,13 +68,13 @@ for file in sorted(os.listdir("./"), key = os.path.getctime):
         cont = True
         for blogBlock in blogPostsSoup.find_all(class_="text-block"):
             for blogEntry in blogBlock.find_all(name="a"):
-                if blogEntry.get('href') == file.name:
+                if blogEntry.get('href').split('/')[-1] == file.name:
                     cont = False
-                if blogEntry.get('href') not in os.listdir("./"):
+                if blogEntry.get('href').split('/')[-1] not in os.listdir("./"):
                     _ = blogBlock.extract()
         if cont:
             try:
-                newTag = BeautifulSoup(f'<div class="text-block"><h2><a href="{"/blog/"+file.name}">{name.text}</a></h2><p>Created: {datetime.fromtimestamp(os.path.getctime(file.name)).replace(microsecond=0, second=0, hour=0, minute=0).isoformat()}</p><p>Last modified: {datetime.fromtimestamp(os.path.getmtime(file.name)).replace(microsecond=0, second=0, hour=0, minute=0).isoformat()}</p></div>', 'html.parser')
+                newTag = BeautifulSoup(f'<div class="text-block"><h2><a href="{"/blog/"+file.name}">{name.text}</a></h2><p>Created: {datetime.fromtimestamp(os.path.getctime(file.name)).replace(microsecond=0).isoformat()}</p><p>Last modified: {datetime.fromtimestamp(os.path.getmtime(file.name)).replace(microsecond=0).isoformat()}</p></div>', 'html.parser')
                 blogPostsSoup.append(newTag)
             except: continue
 
@@ -87,7 +87,7 @@ with open("blog.html") as file:
     blog = file.read()
 blogSoup = BeautifulSoup(blog, 'html.parser')
 
-_ = blogSoup.extract(blogSoup.find(id="blog"))
+blogSoup.find('div', id="blog").decompose()
 blogDivSoup = BeautifulSoup(f'<div id="blog">{str(blogPostsSoup)}</div>', 'html.parser')
 blogSoup.html.body.div.append(blogDivSoup)
 
