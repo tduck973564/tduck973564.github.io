@@ -37,7 +37,7 @@ def addNavbarToPages(navbar_file_path):
         with open(navbar_file_path) as openedNavbarFile:
             navbar = openedNavbarFile.read()
         navbarSoup = BeautifulSoup(navbar, 'html.parser')
-        if file.endswith(".html") and not file.startswith("_"):
+        if file.endswith(".html") and not file.startswith("_") and file != "hydrologic_cycle.html":
             print("Adding navbar to " + file + "...")
             with open(file) as openedFile:
                 currentFile = openedFile.read()

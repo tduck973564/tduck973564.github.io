@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>tduck973564 - Hydrologic Cycle</title>
+        <div id="name" style="display: none;">Home</div>
+        <meta charset="UTF-8">
+        <style>
+            html, body {
+                overflow: hidden;
+                height: 100%;
+                color: white;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+            .parent {
+                scroll-snap-type: y mandatory;
+                overflow: scroll;
+                height: 100%;
+            }
+            .child {
+                height: 100%;
+                scroll-snap-align: center;
+                padding: 50px;
+                text-align: center;
+                font-family: "Roboto", "Noto Sans", "Arial", sans-serif;
+                margin: 20px;
+                box-shadow: 0 5.2px 9.2px 0 rgba(0, 0, 0, 0.132), 0 2.6px 3.8px 0 rgba(0, 0, 0, 0.108);
+                border-radius: 5px;
+            }
+            #precipitation {
+                background: url("https://cdn.wallpapersafari.com/29/54/7zcTjw.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+            #runoff {
+                background: url("https://wallpaperaccess.com/full/243607.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+            #percolation {
+                background: url("https://i.pinimg.com/originals/03/ae/5a/03ae5ad170a45b687fca317321d1cc0b.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+            #evaporation {
+                background: url("https://media.nationalgeographic.org/assets/photos/236/611/b201be11-11e3-42b1-b512-e0369824d02c.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+            #condensation {
+                background: url("https://images.pond5.com/flight-clouds-4k-footage-088345849_prevstill.jpeg") no-repeat center fixed;
+                background-size: cover;
+            }
+            h1 {
+                font-size: 40px;
+            }
+            p {
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parent">
+            <section class="child" id="precipitation">
+                <h1>Precipitation</h1>
+                <p>Precipitation is when the air holding clouds becomes saturated and then the water falls back to the ground. It usually falls in 3 different forms: water, snow and hail. Water is the most common, while hail and snow usually happen in colder climates because the water is frozen during hail or snow.</p>
+            </section>
+            <section class="child" id="runoff">
+                <h1>Run-Off and Infiltration</h1>
+                <p>Run-off is when the precipitated water hits the ground, and <em>runs across</em> the ground. Different landscapes can affect runoff. Smooth, steep land will have faster run-off, while jagged, flat land will have more time for infiltration. Infiltration is when water soaks into the ground from the surface, instead of running across it. This water either becomes groundwater for uptake by plants, or it percolates back into the sea.</p>
+            </section>
+            <section class="child" id="percolation">
+                <h1>Percolation and Groundwater</h1>
+                <p>Percolation is the movement from water through the ground. When water percolates, it goes back into the sea by soaking and moving through the soil. Groundwater is water trapped between the pores of sand and dirt, that is for uptake of plants. Sometimes this groundwater can be extracted through aquifers, which are underground formations of rock that hold water. Rocks that hold water are called pervious rocks, because they have a lot of holes for water to soak into.</p>
+            </section>
+            <section class="child" id="evaporation">
+                <h1>Evaporation and Transpiration</h1>
+                <p>Evaporation is when the sun's energy turns any water exposed to it into water vapour. This water rises up through the atmosphere until it gets high enough to the point where it starts to condense. Transpiration is very similar to evaporation, but it occurs when plants take up water from the ground, and evaporate it through their leaves.</p>
+            </section>
+            <section class="child" id="condensation">
+                <h1>Condensation</h1>
+                <p>Condensation is when the air becomes cold enough for water droplets to form. These water droplets form clouds as the vapour gets higher in the air, and then the air becomes saturated, causing the water droplets to clump together and fall from the sky, called precipitation.</p>
+            </section>
+        </div>
+    </body>
+</html>
